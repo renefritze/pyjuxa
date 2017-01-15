@@ -8,6 +8,6 @@ setup(name='pyjuxa',
     author='René Milk',
     author_email='rene@milk.pm',
     license='BSD-2',
-    packages=['pyjuxa'],
+    packages=['src/pyjuxa, src/pyjuxatests'],
     zip_safe=False)
 

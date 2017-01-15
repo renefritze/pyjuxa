@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2017-01-13T21:33:05" time="0.001" name="AllTests">
+  <testsuite name="tuple" tests="2" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="TypeTransform" status="run" time="0.001" classname="tuple" />
+    <testcase name="Product" status="run" time="0" classname="tuple" />
+  </testsuite>
+</testsuites>

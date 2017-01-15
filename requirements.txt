@@ -1,0 +1,4 @@
+beatifulsoup4
+sqlachemy >= 1.0
+pytest>=2.7
+pytest-cov
