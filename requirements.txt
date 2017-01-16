@@ -1,4 +1,5 @@
-beatifulsoup4
-sqlachemy >= 1.0
+beautifulsoup4
+sqlalchemy >= 1.0
 pytest>=2.7
 pytest-cov
+gitpython

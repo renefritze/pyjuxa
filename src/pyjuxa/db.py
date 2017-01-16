@@ -14,6 +14,15 @@ class Project(Base):
     name = Column(String)
 
 
+class Config(Base):
+    __tablename__ = 'configs'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    project_id = Column(Integer, ForeignKey('projects.id'))
+    project = relationship("Project")
+
+
 class Testsuite(Base):
 
     __tablename__ = 'suites'
