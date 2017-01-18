@@ -3,3 +3,4 @@ sqlalchemy >= 1.0
 pytest>=2.7
 pytest-cov
 gitpython
+lxml

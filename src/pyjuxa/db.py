@@ -10,12 +10,19 @@ Base = declarative_base()
 class Project(Base):
     __tablename__ = 'projects'
 
+    def __init__(self, name):
+        self.name = name
+
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
 
 class Config(Base):
     __tablename__ = 'configs'
+
+    def __init__(self, name, project_id):
+        self.name = name
+        self.project_id = project_id
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -24,7 +31,6 @@ class Config(Base):
 
 
 class Testsuite(Base):
-
     __tablename__ = 'suites'
 
     id = Column(Integer, primary_key=True)
@@ -51,7 +57,6 @@ class Testsuite(Base):
     time="0.451"
     status="run" />'''
 class Testcase(Base):
-
     __tablename__ = 'cases'
 
     id = Column(Integer, primary_key=True)
@@ -62,8 +67,9 @@ class Testcase(Base):
     classname = Column(String)
 
 
-def connect():
+def connect(db_path):
     from sqlalchemy.orm import sessionmaker
-    engine = create_engine('sqlite:///:memory:', echo=True)
+    engine = create_engine('sqlite:///{}'.format(db_path))
+    Base.metadata.create_all(engine)
     return sessionmaker(bind=engine)
 
